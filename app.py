@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import time
 
+# Set up the Streamlit page (must be the first command)
+st.set_page_config(layout="wide")  # Use the full width of the screen
+
 # Hide Streamlit menu, footer, and prevent code inspection
 st.markdown("""
     <style>
@@ -23,9 +26,6 @@ st.markdown("""
     };
     </script>
     """, unsafe_allow_html=True)
-
-# Set up the Streamlit page (must be the first command)
-st.set_page_config(layout="wide")  # Use the full width of the screen
 
 # Custom CSS for better styling
 st.markdown(
