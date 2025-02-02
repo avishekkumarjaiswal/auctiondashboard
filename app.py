@@ -2,6 +2,28 @@ import streamlit as st
 import pandas as pd
 import time
 
+# Hide Streamlit menu, footer, and prevent code inspection
+st.markdown("""
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    .stDeployButton {display: none !important;}  /* Hide GitHub button */
+    </style>
+
+    <script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.onkeydown = function(e) {
+        if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83)) {
+            return false;  // Disable "Ctrl + U" (View Source) & "Ctrl + S" (Save As)
+        }
+        if (e.keyCode == 123) {
+            return false;  // Disable "F12" (DevTools)
+        }
+    };
+    </script>
+    """, unsafe_allow_html=True)
+
 # Set up the Streamlit page (must be the first command)
 st.set_page_config(layout="wide")  # Use the full width of the screen
 
